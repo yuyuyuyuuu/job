@@ -5,8 +5,8 @@
         <text class="title">{{title}}</text>
         <text class="close" @tap="close">×</text>
       </view>
-      <scroll-view scroll-x class="tabs">
-        <view class="tab" v-for="t in tabs" :key="t" :class="{active: t===currentTab}" @tap="() => currentTab=t">{{t}}</view>
+      <scroll-view scroll-x class="tabs" :show-scrollbar="false">
+        <view class="chip" v-for="t in tabs" :key="t" :class="{ 'chip-active': t===currentTab }" @tap="() => currentTab=t">{{t}}</view>
       </scroll-view>
       <scroll-view scroll-y class="list">
         <view class="item card" v-for="(i,idx) in items" :key="idx">
@@ -54,12 +54,12 @@ export default {
 <style lang="scss" scoped>
 .overlay { position: fixed; inset: 0; background: rgba(0,0,0,.25); z-index: 999; display:flex; align-items:flex-end; }
 .sheet { width: 100%; max-height: 85vh; background: #E0F6F0; border-top-left-radius: 24rpx; border-top-right-radius: 24rpx; padding: 24rpx; }
-.sheet-head { display:flex; justify-content:space-between; align-items:center; }
+.sheet-head { display:flex; justify-content:space-between; align-items:center; position: sticky; top: 0; background: #E0F6F0; z-index: 2; }
 .title { font-size: 32rpx; font-weight: 700; }
 .close { font-size: 44rpx; color:#8C96A0; padding: 0 8rpx; }
-.tabs { white-space: nowrap; margin-top: 12rpx; }
-.tab { display:inline-flex; padding: 12rpx 20rpx; background:#EFF7F4; border-radius: 9999rpx; color:#6F7A83; margin-right: 12rpx; }
-.tab.active { background:#4B8DFF; color:#fff; }
+.tabs { white-space: nowrap; margin-top: 12rpx; position: sticky; top: 0; background: #E0F6F0; z-index: 1; }
+.chip { display:inline-flex; padding: 12rpx 20rpx; border-radius: 9999rpx; background:#EFF7F4; color:#6F7A83; margin-right: 12rpx; }
+.chip-active { background:#4B8DFF; color:#fff; }
 .list { max-height: 65vh; margin-top: 20rpx; }
 .item { padding: 18rpx; border-radius: 20rpx; margin-bottom: 18rpx; background:#fff; }
 .row.gap { display:flex; align-items:center; gap: 12rpx; }
