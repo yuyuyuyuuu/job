@@ -4,10 +4,14 @@
       <text class="title">三餐小管家</text>
       <text class="subtitle">智能记录，健康生活</text>
       <view class="mascot">
-        <view class="face"></view>
+        <view class="eye"></view>
+        <view class="eye eye-r"></view>
         <view class="dot"></view>
       </view>
-      <text class="hint">滑动看小贴士</text>
+      <view class="hint-row">
+        <text class="hint">滑动看小贴士</text>
+        <text class="arrow">⬇</text>
+      </view>
     </view>
 
     <view class="tip card">
@@ -17,30 +21,30 @@
       <view class="tip-text">多吃蔬菜🥦肠道更开心～</view>
     </view>
 
-    <view class="cta grad-orange" @tap="goRecord">开拍三餐</view>
+    <view class="cta grad-orange tap-scale" @tap="goRecord">开拍三餐</view>
 
     <view class="stats row gap-20 mt-32">
-      <view class="stat card">
-        <view class="stat-num">12</view>
+      <view class="stat card tap-highlight" @tap="toToday">
+        <view class="stat-num num-tnum">12</view>
         <view class="stat-label">今日记录</view>
       </view>
-      <view class="stat card">
-        <view class="stat-num">85%</view>
+      <view class="stat card tap-highlight" @tap="toNutrition">
+        <view class="stat-num num-tnum">85%</view>
         <view class="stat-label">营养达标</view>
       </view>
     </view>
 
     <view class="panels row gap-20 mt-32">
       <view class="pill card">
-        <text class="pill-num">7</text>
+        <text class="pill-num num-tnum">7</text>
         <text class="pill-label">连续天</text>
       </view>
       <view class="pill card">
-        <text class="pill-num">1.2k</text>
+        <text class="pill-num num-tnum">1.2k</text>
         <text class="pill-label">总卡路里</text>
       </view>
       <view class="pill card">
-        <text class="pill-num">A+</text>
+        <text class="pill-num num-tnum">A+</text>
         <text class="pill-label">健康评分</text>
       </view>
     </view>
@@ -50,9 +54,9 @@
       <view class="prog-row" v-for="(i,idx) in trends" :key="idx">
         <text class="prog-name">{{i.name}}</text>
         <view class="bar">
-          <view class="bar-inner" :style="{ width: i.value + '%', background: i.color }"></view>
+          <view class="bar-inner" :class="i.cls" :style="{ width: i.value + '%' }"></view>
         </view>
-        <text class="prog-val">{{i.value}}%</text>
+        <text class="prog-val num-tnum">{{i.value}}%</text>
       </view>
     </view>
 
@@ -88,9 +92,9 @@ export default {
   data() {
     return {
       trends: [
-        { name: '蔬菜摄入', value: 75, color: '#21C87A' },
-        { name: '水分补充', value: 80, color: '#5C8DFF' },
-        { name: '均衡营养', value: 85, color: '#A66CFF' }
+        { name: '蔬菜摄入', value: 75, cls: 'bar-success' },
+        { name: '水分补充', value: 80, cls: 'bar-primary' },
+        { name: '均衡营养', value: 85, cls: 'bar-accent' }
       ],
       activities: [
         { emoji: '🥗', t: '记录了营养沙拉', time: '2小时前' },
@@ -100,7 +104,9 @@ export default {
     }
   },
   methods: {
-    goRecord() { uni.switchTab({ url: '/pages/record/index' }) }
+    goRecord() { uni.switchTab({ url: '/pages/record/index' }) },
+    toToday(){},
+    toNutrition(){}
   }
 }
 </script>
@@ -111,8 +117,12 @@ export default {
 .title { font-size: 40rpx; font-weight: 700; }
 .subtitle { color: #6B757D; }
 .mascot { position: relative; width: 240rpx; height: 240rpx; border-radius: 9999rpx; background: #FFEFD2; margin: 16rpx auto; box-shadow: 0 8rpx 20rpx rgba(0,0,0,.06) inset; }
+.eye { position:absolute; top: 100rpx; left: 86rpx; width: 16rpx; height: 16rpx; background:#222; border-radius: 9999rpx; transform-origin: center; animation: eye-blink 4.2s infinite; }
+.eye-r { left: 136rpx; }
 .mascot .dot { position: absolute; right: 16rpx; bottom: 24rpx; width: 48rpx; height: 48rpx; background: #1F2A37; border-radius: 9999rpx; }
+.hint-row { display:flex; align-items:center; gap: 8rpx; }
 .hint { color: #8F9AA1; font-size: 24rpx; }
+.arrow { animation: arrow-slide 1.2s infinite; color:#8F9AA1 }
 
 .tip { display:flex; align-items:center; padding: 24rpx; margin-top: 20rpx; background: #FFEED9; }
 .tip-left { width: 100rpx; height: 100rpx; display:flex; align-items:center; justify-content:center; }
