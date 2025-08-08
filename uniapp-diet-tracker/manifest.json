@@ -1,0 +1,27 @@
+{
+  "name": "DietTracker",
+  "appid": "__UNI__DIET001",
+  "description": "三餐小管家 - uni-app 演示",
+  "versionName": "1.0.0",
+  "versionCode": "100",
+  "transformPx": true,
+  "app-plus": {
+    "compatible": {
+      "ignoreVersion": true
+    }
+  },
+  "mp-weixin": {
+    "appid": "",
+    "setting": {
+      "urlCheck": false,
+      "minified": true
+    },
+    "usingComponents": true
+  },
+  "h5": {
+    "title": "DietTracker",
+    "router": {
+      "mode": "hash"
+    }
+  }
+}
