@@ -14,9 +14,9 @@
     </view>
 
     <view class="quick row gap-20 mt-24">
-      <view class="q card tap-highlight"><text class="q-emoji">⚙️</text><text class="q-text">设置</text></view>
-      <view class="q card tap-highlight"><text class="q-emoji">💬</text><text class="q-text">反馈</text></view>
-      <view class="q card tap-highlight"><text class="q-emoji">🧭</text><text class="q-text">引导</text></view>
+      <view class="q card tap-highlight" @tap="goSettings"><text class="q-emoji">⚙️</text><text class="q-text">设置</text></view>
+      <view class="q card tap-highlight" @tap="goFeedback"><text class="q-emoji">💬</text><text class="q-text">反馈</text></view>
+      <view class="q card tap-highlight" @tap="goRank"><text class="q-emoji">🏅</text><text class="q-text">排行</text></view>
     </view>
 
     <view class="section card mt-32">
@@ -41,10 +41,10 @@ import CustomTabBar from '../../components/custom-tab-bar.vue'
 export default {
   components: { CustomTabBar },
   methods: {
-    showReport() {
-      uni.showLoading({ title: '生成中' })
-      setTimeout(() => { uni.hideLoading(); uni.showToast({ title: '已生成', icon: 'success' }) }, 800)
-    }
+    showReport() { uni.navigateTo({ url: '/pages/report/index' }) },
+    goSettings(){ uni.navigateTo({ url: '/pages/settings/index' }) },
+    goFeedback(){ uni.navigateTo({ url: '/pages/feedback/index' }) },
+    goRank(){ uni.navigateTo({ url: '/pages/rank/index' }) }
   }
 }
 </script>

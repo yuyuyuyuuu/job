@@ -27,7 +27,11 @@
         "navigationStyle": "custom",
         "backgroundColor": "#E0F6F0"
       }
-    }
+    },
+    { "path": "pages/settings/index", "style": { "navigationStyle": "custom", "backgroundColor": "#E0F6F0", "navigationBarTitleText": "设置" }},
+    { "path": "pages/feedback/index", "style": { "navigationStyle": "custom", "backgroundColor": "#E0F6F0", "navigationBarTitleText": "反馈" }},
+    { "path": "pages/rank/index", "style": { "navigationStyle": "custom", "backgroundColor": "#E0F6F0", "navigationBarTitleText": "排行" }},
+    { "path": "pages/report/index", "style": { "navigationStyle": "custom", "backgroundColor": "#E0F6F0", "navigationBarTitleText": "报告" }}
   ],
   "globalStyle": {
     "navigationBarTextStyle": "black",
