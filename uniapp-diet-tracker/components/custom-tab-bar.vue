@@ -2,7 +2,7 @@
   <view class="tabbar">
     <view class="item" v-for="i in tabs" :key="i.page" @tap="switchTab(i.page)" :class="{active: current===i.page}">
       <view class="top-dot" v-if="current===i.page"></view>
-      <view :class="['icon', { active: current===i.page }]">{{ i.emoji }}</view>
+      <view :class="['icon', 'icon-bubble', { active: current===i.page }]" :style="current===i.page ? 'transform: scale(1.06)' : ''">{{ i.emoji }}</view>
       <text :class="['label', { active: current===i.page }]">{{i.text}}</text>
     </view>
   </view>
@@ -28,26 +28,17 @@ export default {
       const pages = getCurrentPages();
       this.current = '/' + pages[pages.length - 1].route;
     },
-    switchTab(url) {
-      if (this.current === url) return;
-      uni.switchTab({ url });
-    }
+    switchTab(url) { if (this.current !== url) uni.switchTab({ url }) }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.tabbar {
-  position: fixed; left: 0; right: 0; bottom: 0;
-  height: 120rpx; background: #F3FBF8; box-shadow: 0 -8rpx 24rpx rgba(0,0,0,.04);
-  display: flex; justify-content: space-around; align-items: center;
-  padding-bottom: env(safe-area-inset-bottom);
-}
+.tabbar { position: fixed; left: 0; right: 0; bottom: 0; height: 120rpx; background: #F3FBF8; box-shadow: 0 -8rpx 24rpx rgba(0,0,0,.04); display: flex; justify-content: space-around; align-items: center; padding-bottom: env(safe-area-inset-bottom); }
 .item { position:relative; display:flex; flex-direction:column; align-items:center; gap: 8rpx; padding-top: 8rpx; }
 .top-dot { position:absolute; top: -6rpx; width: 12rpx; height: 12rpx; border-radius: 9999rpx; background: #4B8DFF; }
-.icon { width: 68rpx; height: 68rpx; border-radius: 16rpx; background: #ffffff; display:flex; align-items:center; justify-content:center; font-size: 36rpx; transition: background 200ms; }
+.icon { width: 68rpx; height: 68rpx; border-radius: 16rpx; display:flex; align-items:center; justify-content:center; font-size: 36rpx; transition: background 200ms, transform 200ms; }
 .label { font-size: 22rpx; color: #98A0A6; transition: color 200ms; }
 .label.active { color: #4B8DFF; font-weight: 600; }
 .icon.active { background: #E8EEFF; color: #4B8DFF; box-shadow: inset 0 -4rpx 0 #4B8DFF; }
-.item.active { }
 </style>

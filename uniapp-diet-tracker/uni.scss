@@ -46,6 +46,8 @@ page {
 .grad-orange { background: linear-gradient(180deg, #FFC5B6 0%, #FFA487 100%); }
 .grad-pink { background: linear-gradient(180deg, #FFE5E9 0%, #FFD0D8 100%); }
 .grad-green { background: linear-gradient(180deg, #E8FFF6 0%, #D8FFF1 100%); }
+.grad-soft-yellow { background: linear-gradient(180deg, #FFF6E2 0%, #FFE8B6 100%); }
+.grad-soft-orange { background: linear-gradient(180deg, #FFE1D6 0%, #FFC2AD 100%); }
 
 /* Progress bar base */
 .bar { height: 16rpx; background: #EEF2F4; border-radius: 10rpx; overflow: hidden; }
@@ -85,3 +87,10 @@ page {
 /* Helper chips */
 .chip { padding: 12rpx 20rpx; border-radius: 9999rpx; background: #EFF7F4; color: #6F7A83; }
 .chip-active { background: $primary; color: #fff; }
+.icon-bubble { background: radial-gradient(120% 120% at 30% 20%, rgba(255,255,255,.9) 0%, rgba(255,255,255,0) 40%), linear-gradient(180deg, #FDFDFE 0%, #E9EEF8 100%); box-shadow: inset 0 -6rpx 0 rgba(75,141,255,.35); }
+.medal { width: 96rpx; height: 96rpx; border-radius: 9999rpx; background: linear-gradient(180deg,#FFE39A,#FFCD4D); box-shadow: 0 10rpx 24rpx rgba(255,180,50,.35), inset 0 -6rpx 0 rgba(0,0,0,.06); position: relative; }
+.medal::after { content:''; position:absolute; top: 14rpx; left: 18rpx; width: 44rpx; height: 18rpx; border-radius: 9999rpx; background: rgba(255,255,255,.65); }
+
+/* Responsive helpers */
+.badges-wrap { display:flex; flex-wrap: wrap; gap: 28rpx; }
+@media screen and (max-width: 360px) { .badges-wrap { gap: 20rpx } }
