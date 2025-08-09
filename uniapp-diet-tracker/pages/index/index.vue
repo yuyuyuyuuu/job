@@ -76,7 +76,7 @@
 
     <view class="section card mt-24">
       <view class="section-title">成就徽章</view>
-      <view class="badges badges-wrap">
+      <view class="badges badges-wrap space-between">
         <view class="badge"><view class="medal gold"></view><text class="b-text">连续7天</text></view>
         <view class="badge"><view class="medal silver"></view><text class="b-text">营养达人</text></view>
         <view class="badge"><view class="medal bronze"></view><text class="b-text">健康先锋</text></view>
@@ -115,7 +115,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.page { padding: 40rpx 32rpx 160rpx; }
+.page { padding: calc(env(safe-area-inset-top) + 32rpx) 32rpx 160rpx; }
 .header { align-items: center; text-align: center; display:flex; flex-direction:column; gap: 14rpx; }
 .title { font-size: 40rpx; font-weight: 700; }
 .subtitle { color: #6B757D; }
@@ -140,7 +140,7 @@ export default {
 
 .stats .stat { flex: 1; padding: 28rpx; border-radius: 24rpx; }
 .stat-num { font-size: 56rpx; font-weight: 800; }
-.stat-label { color:#7F8A92; margin-top: 8rpx; }
+.stat-label { color:#7F8A92; margin-top: 10rpx; }
 
 .panels .pill { flex:1; height: 140rpx; align-items:center; justify-content:center; text-align:center; padding: 20rpx; }
 .pill-num { font-weight: 800; font-size: 44rpx; }
@@ -150,18 +150,20 @@ export default {
 .section-title { font-weight: 700; margin-bottom: 20rpx; }
 .prog-row { display:grid; grid-template-columns: 160rpx 1fr 100rpx; align-items: center; gap: 16rpx; margin: 16rpx 0; }
 .prog-name { color: #3C3C3C; }
-.bar { height: 16rpx; background: #EEF2F4; border-radius: 10rpx; overflow: hidden; }
-.bar-inner { height: 100%; border-radius: 10rpx; }
+.bar { height: 18rpx; background: #EEF2F4; border-radius: 12rpx; overflow: hidden; position: relative; }
+.bar-inner { height: 100%; border-radius: 12rpx; position: relative; }
+.bar-inner::after { content:''; position:absolute; left:0; right:0; top:0; height: 50%; background: linear-gradient(180deg, rgba(255,255,255,.45), rgba(255,255,255,0)); }
 .prog-val { text-align:right; color: #6B757D; }
 
-.activity { display:flex; align-items:center; gap: 20rpx; padding: 16rpx 0; }
+.activity { display:flex; align-items:center; gap: 16rpx; padding: 16rpx 0; }
 .act-icon { width: 72rpx; height: 72rpx; border-radius: 18rpx; display:flex; align-items:center; justify-content:center; font-size: 36rpx; }
 .a-col { display:flex; flex-direction:column; }
 .a-title { font-weight: 600; }
-.a-time { color:#8B95A1; font-size: 24rpx; }
+.a-time { color:#999; font-size: 24rpx; }
 
 .badges { display:flex; gap: 28rpx; }
 .badges-wrap { display:flex; flex-wrap: wrap; gap: 28rpx; }
+.space-between { justify-content: space-between; }
 .badge { display:flex; flex-direction:column; align-items:center; gap: 8rpx; }
 .b-text { color:#6F7A83; font-size: 24rpx; }
 .dim { opacity:.5 }
@@ -169,4 +171,12 @@ export default {
 .medal.silver { background: linear-gradient(180deg,#EDEFF5,#C9D1E6) }
 .medal.bronze { background: linear-gradient(180deg,#FFD1A0,#E9A869) }
 .medal.lock { background: linear-gradient(180deg,#EDEFF2,#D6DADF) }
+
+/* Responsive adjustments */
+@media screen and (max-width: 360px) {
+  .page { padding: calc(env(safe-area-inset-top) + 24rpx) 24rpx 140rpx; }
+  .mascot { width: 200rpx; height: 200rpx; }
+  .cta { width: 600rpx; height: 108rpx; }
+  .badges-wrap { gap: 20rpx; }
+}
 </style>
