@@ -2,7 +2,6 @@
   "pages": [
     { "path": "pages/index/index", "style": { "navigationStyle": "custom", "backgroundColor": "#E0F6F0" }},
     { "path": "pages/record/index", "style": { "navigationStyle": "custom", "backgroundColor": "#E0F6F0" }},
-    { "path": "pages/record/result", "style": { "navigationStyle": "custom", "backgroundColor": "#E0F6F0", "navigationBarTitleText": "识别结果" }},
     { "path": "pages/calendar/index", "style": { "navigationStyle": "custom", "backgroundColor": "#E0F6F0" }},
     { "path": "pages/profile/index", "style": { "navigationStyle": "custom", "backgroundColor": "#E0F6F0" }},
     { "path": "pages/settings/index", "style": { "navigationStyle": "custom", "backgroundColor": "#E0F6F0", "navigationBarTitleText": "设置" }},
