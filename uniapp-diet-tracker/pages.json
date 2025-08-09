@@ -1,67 +1,21 @@
 {
   "pages": [
-    {
-      "path": "pages/index/index",
-      "style": {
-        "navigationStyle": "custom",
-        "backgroundColor": "#E0F6F0"
-      }
-    },
-    {
-      "path": "pages/record/index",
-      "style": {
-        "navigationStyle": "custom",
-        "backgroundColor": "#E0F6F0"
-      }
-    },
-    {
-      "path": "pages/calendar/index",
-      "style": {
-        "navigationStyle": "custom",
-        "backgroundColor": "#E0F6F0"
-      }
-    },
-    {
-      "path": "pages/profile/index",
-      "style": {
-        "navigationStyle": "custom",
-        "backgroundColor": "#E0F6F0"
-      }
-    },
+    { "path": "pages/index/index", "style": { "navigationStyle": "custom", "backgroundColor": "#E0F6F0" }},
+    { "path": "pages/record/index", "style": { "navigationStyle": "custom", "backgroundColor": "#E0F6F0" }},
+    { "path": "pages/record/result", "style": { "navigationStyle": "custom", "backgroundColor": "#E0F6F0", "navigationBarTitleText": "识别结果" }},
+    { "path": "pages/calendar/index", "style": { "navigationStyle": "custom", "backgroundColor": "#E0F6F0" }},
+    { "path": "pages/profile/index", "style": { "navigationStyle": "custom", "backgroundColor": "#E0F6F0" }},
     { "path": "pages/settings/index", "style": { "navigationStyle": "custom", "backgroundColor": "#E0F6F0", "navigationBarTitleText": "设置" }},
     { "path": "pages/feedback/index", "style": { "navigationStyle": "custom", "backgroundColor": "#E0F6F0", "navigationBarTitleText": "反馈" }},
     { "path": "pages/rank/index", "style": { "navigationStyle": "custom", "backgroundColor": "#E0F6F0", "navigationBarTitleText": "排行" }},
     { "path": "pages/report/index", "style": { "navigationStyle": "custom", "backgroundColor": "#E0F6F0", "navigationBarTitleText": "报告" }}
   ],
-  "globalStyle": {
-    "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "",
-    "navigationBarBackgroundColor": "#E0F6F0",
-    "backgroundColor": "#E0F6F0"
-  },
-  "tabBar": {
-    "custom": true,
-    "borderStyle": "white",
-    "color": "#98A0A6",
-    "selectedColor": "#4B51FF",
-    "backgroundColor": "#F7FAF9",
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "首页"
-      },
-      {
-        "pagePath": "pages/record/index",
-        "text": "记录"
-      },
-      {
-        "pagePath": "pages/calendar/index",
-        "text": "日历"
-      },
-      {
-        "pagePath": "pages/profile/index",
-        "text": "我的"
-      }
+  "globalStyle": {"navigationBarTextStyle": "black","navigationBarTitleText": "","navigationBarBackgroundColor": "#E0F6F0","backgroundColor": "#E0F6F0"},
+  "tabBar": {"custom": true,"borderStyle": "white","color": "#98A0A6","selectedColor": "#4B51FF","backgroundColor": "#F7FAF9","list": [
+      { "pagePath": "pages/index/index", "text": "首页" },
+      { "pagePath": "pages/record/index", "text": "记录" },
+      { "pagePath": "pages/calendar/index", "text": "日历" },
+      { "pagePath": "pages/profile/index", "text": "我的" }
     ]
   }
 }

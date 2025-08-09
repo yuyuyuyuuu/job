@@ -94,3 +94,5 @@ page {
 /* Responsive helpers */
 .badges-wrap { display:flex; flex-wrap: wrap; gap: 28rpx; }
 @media screen and (max-width: 360px) { .badges-wrap { gap: 20rpx } }
+.bubble-yellow { background: linear-gradient(180deg, #FFF6E2 0%, #FFE8B6 100%); border-radius: 16rpx; box-shadow: 0 10rpx 30rpx rgba(0,0,0,.08); }
+.card-soft { background: #FFFFFF; border-radius: 24rpx; box-shadow: 0 10rpx 30rpx rgba(0,0,0,.08); }
